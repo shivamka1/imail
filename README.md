@@ -2,7 +2,7 @@
 
 A Chromium-based macOS desktop app that wraps iCloud Mail web, solving two problems with the native Mail.app:
 
-- **Dark mode text color bug** — emails with hardcoded light colors are unreadable in dark mode. Fixed via injected CSS in the reading pane.
+- **Dark mode text color bug** — emails composed in dark mode get hardcoded white/light text, which renders as white-on-white for recipients using light mode. Unsolvable on the receiving end; avoided entirely by locking the app to light mode permanently (`nativeTheme.themeSource = 'light'`).
 - **Hide My Email via SMTP** — the native app requires SMTP configuration that doesn't play nicely with Hide My Email aliases. The web interface sends through Apple's own servers directly, so this is a non-issue.
 
 ---
