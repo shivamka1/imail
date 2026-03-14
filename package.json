@@ -1,0 +1,39 @@
+{
+  "name": "imail",
+  "version": "1.0.0",
+  "description": "iCloud Mail as a native desktop app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --mac",
+    "make-icons": "node scripts/make-icons.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^41.0.2",
+    "electron-builder": "^26.8.1"
+  },
+  "build": {
+    "appId": "com.personal.imail",
+    "productName": "iMail",
+    "copyright": "Personal",
+    "mac": {
+      "category": "public.app-category.productivity",
+      "icon": "assets/icon.icns",
+      "target": [
+        { "target": "dmg", "arch": ["arm64", "x64"] }
+      ],
+      "darkModeSupport": true
+    },
+    "dmg": {
+      "title": "iMail"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "assets/**"
+    ]
+  }
+}
